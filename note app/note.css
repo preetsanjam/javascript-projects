@@ -1,0 +1,16 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: orange;
+}
+#addNote {
+    width: 200px;
+    height: 180px;
+    border-radius: 2 px;
+    background-color: #fff;
+    font-size: 44 px;
+    border: none;
+}
