@@ -9,8 +9,19 @@ body {
 #addNote {
     width: 200px;
     height: 180px;
-    border-radius: 2 px;
+    border-radius: 4 px;
     background-color: #fff;
     font-size: 44 px;
     border: none;
+}
+.addForm {
+    width: 300 px;
+    padding: 11px;
+    border-radius: 3px;
+    background-color: white;
+    position: fixed;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%,-40%);
+    top: 5%;
 }
