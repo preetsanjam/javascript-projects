@@ -8,22 +8,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container"> <!-- The outermost wrapper for everything inside the body -->
+                            <!-- Makes it easy to control overall page layout -->
         
         <div class="note">
-            <div class="btn">
+            <div class="btn"> <!-- A small wrapper for the Add Note button -->
                 <button id="addNote"><i class="fa-solid fa-plus"></i><br>Add Note</button>
             </div>
-            <div class="newNotes">
-
+            <div class="newNotes"> <!-- An empty container where newly created notes are added dynamically with JS-->
+                
             </div>
         </div>
-        <div class="addForm">
-            <div class="head">
+        
+        <div class="addForm"> <!-- This is the popup form for adding a note -->
+            <div class="head"> <!-- Holds the heading (title) of the form and the close (X) icon -->
                 <h2>Add a Note</h2>
                 <button class="icon"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div class="inputs">
+            
+            <div class="inputs"> <!-- Groups label (<p>) + form field (<input> or <textarea>) -->
                 <p>Title</p>
                 <input type="text" id="title" value="">
             </div>
@@ -31,6 +34,7 @@
                 <p>Description</p>
                 <textarea rows="5px" cols="20" id="description" value=""></textarea>
             </div>
+            
             <button id="addBtn">Add Note</button>
         </div>
     </div>
