@@ -16,14 +16,16 @@ body {
     border: none;
 }
 .addForm {
-  width: 300px;
-  padding: 11px;
-  border-radius: 3px;
-  background-color: #fff;
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%, -40%);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);  
+    display: none;
+    width: 300px;
+    padding: 21px;
+    border-radius: 3px;
+    background-color: #fff;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15); 
+    top: 45%; 
 }
 .addForm input {
     width: 90%;
@@ -59,7 +61,7 @@ textarea {
     display: flex;
     justify-content: space-between;
 }
-.head i {
+.head button {
     border: none;
     background-color: transparent;
     font-size: 33px;
