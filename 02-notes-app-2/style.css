@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+.container {
+    width: 100%;
+    min-height: 100vh; /* vh - viewport height; The element’s height should be at least as tall as the browser window */
+    background: linear-gradient(135deg, #cf9aff, #95c0ff);
+    color: #fff;
+    padding-top:4%;
+    padding-left: 10%;
+}
+.container h1 {
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+    font-weight: 600;
+}
+.container img {
+    width: 60px;
+}
+.container button img {
+    width: 25px;
+    margin-right: 8px; /* Adds 8 pixels of space to the right side of the image */
+}
+.container button {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(#9418fd, #571094);
+    color: #fff; /* Sets the text color to white */
+    font-size: 16px; /* Makes the button’s text 16 pixels in size */
+    outline: 0; /* Removes the default browser focus outline around the button (often blue) */
+    border: 0; /* Removes the default border */
+    border-radius: 40px; /* Rounds the button’s corners to give it a pill shape */
+    padding: 15px 25px; /* Creates space inside the button so it looks bigger and more clickable; Top/Bottom: 15px; Left/Right: 25px */
+    margin: 30px 0 20px; /* Controls the space outside the button */
+    cursor: pointer;
+}
