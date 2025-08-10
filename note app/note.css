@@ -14,6 +14,7 @@ body {
     background-color: #fff;
     font-size: 44px;
     border: none;
+    cursor: pointer;
 }
 .addForm {
     display: none;
@@ -58,7 +59,11 @@ textarea {
     cursor: pointer;
 }
 .head {
+    /* display: flex turns .head into a flex container
+    Its direct children (like buttons, headings, icons) become flex items that are laid out in a row by default */
     display: flex;
+
+    /* Places the first child at the far left and the last child at the far right of the container */
     justify-content: space-between;
 }
 .head button {
