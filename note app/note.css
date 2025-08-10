@@ -16,6 +16,36 @@ body {
     border: none;
     cursor: pointer;
 }
+.myNote {
+    width: 200px;
+    height: 140px;
+    border-radius: 4px;
+    background-color: #fff;    
+    border: none;
+    padding: 11px;
+}
+.myNote p {
+    margin-top: 11px;
+}
+.note {
+    display: flex;
+}
+.newNotes {
+    display: flex;
+    gap: 33px;
+}
+.myNote button {
+    margin-top: 11px;
+    width: 80px;
+    height: 27px;
+    background-color: orange;
+    color: white;
+    position: fixed;
+    top: 80px; 
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
 .addForm {
     display: none;
     width: 300px;
