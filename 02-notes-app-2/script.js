@@ -63,7 +63,7 @@ document.addEventListener("keydown", event => {
     }
 })
 
-// SUMMARY – HOE IT WORKS
+// SUMMARY – HOW IT WORKS
 // Loads saved notes from localStorage on page load.
 // Creates new editable notes with a delete icon when the button is clicked.
 // Deletes notes when the trash icon is clicked.
