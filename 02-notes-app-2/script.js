@@ -5,6 +5,7 @@ let notes = document.querySelectorAll(".input-box");
 function showNotes() {
     notesContainer.innerHTML = localStorage.getItem("notes");
 }
+showNotes();
 
 function updateStorage() {
     localStorage.setItem("notes", notesContainer.innerHTML);
@@ -31,5 +32,12 @@ notesContainer.addEventListener("click", function(e) {
                 updateStorage();
             }
         })
+    }
+})
+
+document.addEventListener("keydown", event => {
+    if(event.key === "Enter") {
+        document.execCommand("insertLineBreak");
+        event.preventDefault();
     }
 })
