@@ -1,5 +1,6 @@
 ## DOM tree for notes app
 
+```
 html
 └── head
     ├── meta
@@ -20,3 +21,4 @@ html
             └── p.input-box (contenteditable="true") ← parentElement
                 ├── text: "My note text here"
                 └── img (delete.png) ← e.target
+```
