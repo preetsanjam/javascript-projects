@@ -20,7 +20,7 @@ createBtn.addEventListener("click", () => {
     // Create a paragraph element for the note
     let inputBox = document.createElement("p"); 
     
-    // Create a paragraph element for the note
+    // Create an image element for delete icon
     let img = document.createElement("img");
     
     // Assign CSS class to note
