@@ -5,13 +5,18 @@ let notes = document.querySelectorAll(".input-box");
 // ===== FUNCTION TO SHOW SAVED NOTES FROM localStorage =====
 function showNotes() {
     // Load saved notes from browser storage and display them
-    notesContainer.innerHTML = localStorage.getItem("notes");
+    //innerHTML = ... tells the browser: 
+    // "Replace everything inside this element with this HTML string."
+    notesContainer.innerHTML = localStorage.getItem("notes"); 
 }
 showNotes(); // Run immediately when page loads
 
 // ===== FUNCTION TO UPDATE STORAGE =====
 function updateStorage() {
-    // Save current notes HTML into localStorage
+    // Store the current HTML content of the notes container 
+    // in the browser's localStorage under the key "notes".
+    // This ensures that all created notes are saved and will persist
+    // even after the page is refreshed or the browser is closed.
     localStorage.setItem("notes", notesContainer.innerHTML);
 }
 
