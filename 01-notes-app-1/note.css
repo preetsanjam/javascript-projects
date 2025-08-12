@@ -1,7 +1,9 @@
+/* Apply these styles to ALL elements on the page */
 *{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
+    margin: 0%; /* Remove all default outer spacing (margins) from elements */
+    padding: 0%; /* Remove all default inner spacing (padding) from elements */
+    box-sizing: border-box; /* Include padding and border inside the element's 
+                                total width/height for easier layout control */
 }
 body {
     font-family: 'Roboto', sans-serif;
