@@ -28,18 +28,22 @@
     font-size: 20px;
     color: #fff;
     cursor: pointer;
-    margin: 10px;
+    margin: 10px;    
 }
 form .display {
     display: flex;
     justify-content: flex-end;
     margin: 20px 0;
 }
-form .display input {
+form .display input.inputBox {
     text-align: right;
     flex: 1;
     font-size: 45px;
-    box-shadow: none;
+    color: black;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding-right: 8px;
+    background-color: #fff;
 }
 form input.equal {
     width: 145px;
