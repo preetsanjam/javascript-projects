@@ -37,9 +37,11 @@ form .display {
 }
 form .display input.inputBox {
     text-align: right;
-    flex: 1;
+    flex: 1; /* Allows the input box to expand and take up available space in a flex container */
     font-size: 45px;
     color: #3a4452;
+    /* rgba(255,255,255,0.1) → white, 10% opacity, acting like a subtle highlight */
+    /* rgba(0,0,0,0.2) → black, 20% opacity, forming the actual shadow */
     box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding-right: 8px;
