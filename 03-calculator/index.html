@@ -17,7 +17,11 @@
             <div>
                 <!-- AC means All Clear; display.value is empty => it deletes any value -->
                 <input type="button" value="AC" onclick="display.value = '' " class="operator"> 
-                <input type="button" value="DE" onclick="display.value = display.value.toString().slice(0,-1)" class="operator">
+                
+                <!-- display.value.toString() → Ensures the current value is treated as a string (in case it’s a number) -->
+                <!-- .slice(0, -1) → Returns the string from index 0 up to the second last character, effectively removing the last one -->
+                <!-- display.value = ... → Updates the calculator display with the shortened string -->
+                <input type="button" value="DE" onclick="display.value = display.value.toString().slice(0,-1)" class="operator"> 
                 <input type="button" value="." onclick="display.value += '.' " class="operator">
                 <input type="button" value="/" onclick="display.value += '/' " class="operator">
             </div>
