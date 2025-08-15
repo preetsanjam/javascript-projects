@@ -1,6 +1,21 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
+}
+#keys {
+    display: grid;
+    grid-template-columns: repeat();
+}
+button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Circular buttons */
+    border: none;
+    background-color: hsl(0, 0%, 30%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
 }
