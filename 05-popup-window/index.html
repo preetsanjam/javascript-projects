@@ -8,13 +8,21 @@
 </head>
 <body>
     <div class="container">
-        <button type="submit" class="btn">Submit</button>
-        <div class="popup">
+        <button type="submit" class="btn" onclick="openPopup()">Submit</button>
+        <div class="popup" id="popup">
             <img src="tick.png">
             <h2>Thank You!</h2>
-            <p>Your details have been submitted. Thanks!</p>
-            <button>OK</button>
+            <p>Your details have been submitted.</p>
+            <button onclick="closePopup()">OK</button>
         </div>
-    </div>    
+    </div>
+    
+    <script>
+        let popup = document.getElementById("popup");
+
+        function openPopup() {
+            
+        }
+    </script>
 </body>
 </html>
