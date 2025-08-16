@@ -18,7 +18,7 @@
     </div>
     
     <script>
-        let popup = document.getElementById("popup");
+        let popup = document.getElementById("popup");       
 
         function openPopup() {
             popup.classList.add("open-popup")
@@ -30,3 +30,20 @@
     </script>
 </body>
 </html>
+
+
+<!-- WHY CAN'T WE USE className = "open-popup" -->
+
+<!-- If you use className = "open-popup" -->
+
+<!-- function openPopup() {
+    popup.className = "open-popup";
+} -->
+
+<!-- This replaces all existing classes with just "open-popup". -->
+<!-- So if the element originally had class="popup", it will lose it -->
+<!-- That means we no longer have the base popup styling — only the open-popup rules will apply -->
+
+<!-- KEY DIFFERENCE -->
+<!-- className → replaces all classes at once -->
+<!-- classList.add() → adds one (or more) new classes safely without removing the old ones -->
