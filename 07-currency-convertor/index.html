@@ -9,6 +9,22 @@
 <body>
     <main>
         <h1>Currency Convertor</h1>
+        
+        <div class="controls" id="controls">
+            <div class="control">
+                <button id="base">USD</button>
+                <input type="number" id="base-input" value="0" min="0" step="0.01">
+            </div>
+            <div class="control">
+                <button id="target">EUR</button>
+                <input type="number" id="target-input" value="0" readonly>
+            </div>
+            <button class="swap-btn" id="swap-btn">swap</button>
+        </div>
+
+        <div class="exchange-rate">
+            <h5>Exchange Rate</h5>
+        </div>
     </main>
 
     <script src="script.js"></script>
