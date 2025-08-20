@@ -3,7 +3,7 @@
 /* 
 The :root selector
 :root is a special CSS pseudo-class that refers to the very top-level element of the document.
- In HTML, this is the <html> element.
+In HTML, this is the <html> element.
 Developers often use :root to define CSS custom properties (variables), so they can be reused across the entire stylesheet.
 */
 :root {
