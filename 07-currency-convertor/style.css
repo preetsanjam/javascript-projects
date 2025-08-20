@@ -67,6 +67,7 @@ button {
     overflow: hidden;
 }
 .control button {
+    --image: url(https://placehold.co/30/teal/white?text=$);
     font-weight: 600;
     background: transparent;
     margin-left: 20px;
@@ -79,7 +80,12 @@ button {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: teal;
+    background: teal var(--image) center no-repeat;
+}
+.control button::after {
+    font-family: 'Material Symbols Outlined';
+    font-size: 1.5rem;
+    content: "\e69b";
 }
 .control input {
     font-size: 2.5rem;
