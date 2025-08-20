@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link 
         rel="stylesheet" 
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=sync_alt" 
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" 
     />
+    
 </head>
 <body>
     <main>
@@ -16,11 +17,15 @@
         
         <div class="controls" id="controls">
             <div class="control">
-                <button id="base">USD</button>
+                <button id="base">USD
+                    <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                </button>
                 <input type="number" id="base-input" value="0" min="0" step="0.01">
             </div>
             <div class="control">
-                <button id="target">EUR</button>
+                <button id="target">EUR
+                    <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                </button>
                 <input type="number" id="target-input" value="0" readonly>
             </div>
             <button class="swap-btn" id="swap-btn">

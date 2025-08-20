@@ -82,11 +82,6 @@ button {
     border-radius: 50%;
     background: teal var(--image) center no-repeat;
 }
-.control button::after {
-    font-family: 'Material Symbols Outlined';
-    font-size: 1.5rem;
-    content: "\e69b";
-}
 .control input {
     font-size: 2.5rem;
     text-align: end;
