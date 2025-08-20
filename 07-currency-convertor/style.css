@@ -66,3 +66,27 @@ button {
     border-radius: 10px;
     overflow: hidden;
 }
+.control button {
+    font-weight: 600;
+    background: transparent;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.control button::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: teal;
+}
+.control input {
+    font-size: 2.5rem;
+    text-align: end;
+    background: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+}
