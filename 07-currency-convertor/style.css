@@ -26,7 +26,7 @@ Developers often use :root to define CSS custom properties (variables), so they 
     font-family: "Outfit", sans-serif;
 }
 body {
-    display: grid;
+    display: grid; /* Arrange elements in rows and columns, like a spreadsheet or a table */
     place-items: center;
     height: 100vh;
     background: linear-gradient(135deg, var(--blue), var(--green));
@@ -48,4 +48,21 @@ h1 {
     text-transform: uppercase;
     font-size: 1.5rem;
     color: var(--green);
+}
+button {
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.controls {
+    display: grid;
+    gap: 20px;
+    position: relative;
+}
+.control {
+    display: flex;
+    background: var(--input-background);
+    box-shadow: inset 0 0 3px var(--input-shadow);
+    border-radius: 10px;
+    overflow: hidden;
 }
