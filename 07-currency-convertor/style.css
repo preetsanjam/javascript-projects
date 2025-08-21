@@ -135,3 +135,12 @@ button {
     color: var(--exchange-rate-color);
     font-weight: 500;
 }
+.drawer {
+    position: absolute;
+    inset: 0;
+    background: var(--white);
+    padding: 20px;
+    display: grid;
+    align-content: start;
+    gap: 20px;
+}
