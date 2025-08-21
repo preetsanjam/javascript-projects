@@ -122,3 +122,16 @@ button {
 .swap-btn:hover span {
     rotate: 270deg;
 }
+.exchange-rate {
+    text-align: center;
+}
+.exchange-rate h5 {
+    text-transform: uppercase;
+    color: var(--green);
+}
+.exchange-rate span {
+    margin-top: 10px;
+    display: inline-block;
+    color: var(--exchange-rate-color);
+    font-weight: 500;
+}
