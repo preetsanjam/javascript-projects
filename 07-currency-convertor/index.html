@@ -16,28 +16,36 @@
         <h1>Currency Convertor</h1>
         
         <div class="controls" id="controls">
+            
+            <!-- Base currency input -->
             <div class="control">
                 <button id="base">USD
                     <span class="material-symbols-outlined">keyboard_arrow_down</span>
                 </button>
                 <input type="number" id="base-input" value="0" min="0" step="0.01">
             </div>
+
+            <!-- Target currency input -->
             <div class="control">
                 <button id="target">EUR
                     <span class="material-symbols-outlined">keyboard_arrow_down</span>
                 </button>
                 <input type="number" id="target-input" value="0" readonly>
             </div>
+
+            <!-- Swap button (switches base and target currencies) -->
             <button class="swap-btn" id="swap-btn">
                 <span class="material-symbols-outlined">sync_alt</span>
             </button>
         </div>
 
+         <!-- Exchange rate info display -->
         <div class="exchange-rate">
             <h5>Exchange Rate</h5>
             <span id="exchange-rate">1 USD = 0.0000 EUR</span>
         </div>
 
+        <!-- Drawer (hidden panel for selecting currencies) -->
         <div class="drawer" id="drawer">
             <div class="title">
                 <button id="dismiss-btn">Close</button>
