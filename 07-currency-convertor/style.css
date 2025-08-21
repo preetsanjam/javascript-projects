@@ -75,8 +75,8 @@ button {
     align-items: center;
     gap: 10px;
 }
-.control button::before {
-    content: "";
+.control button::before { /* '::before' inserts a virtual element before the actual button content */
+    content: ""; /* Creates a "box" that we can style */
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -94,8 +94,8 @@ button {
     outline: none;
     padding: 10px 20px;
 }
-.control input::--webkit-inner-spin-button,
-.control input::--webkit-outer-spin-button {
+.control input::-webkit-inner-spin-button,
+.control input::-webkit-outer-spin-button {
     appearance: none;
 }
 .swap-btn {
@@ -110,14 +110,14 @@ button {
     top: 50%;
     inset-inline-start: 50%;
     transform: translate(-50%, -50%);
-    transform: 0.3s;
+    transition: 0.3s;
 }
 .swap-btn:hover {
     background: var(--green);
 }
 .swap-btn span {
     rotate: 90deg;
-    transition: inherit;
+    transition: inherit; /* Inherits the transition settings from its parent (.swap-btn) */
 }
 .swap-btn:hover span {
     rotate: 270deg;
