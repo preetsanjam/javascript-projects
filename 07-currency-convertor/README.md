@@ -4,8 +4,8 @@ A javascript app providing real-time exchange rate information to help users con
 
 ### Features
 
-- [x] Toggle drawer to display currencies
-- [x] Display list of available currencies from API
+- [ ] Toggle drawer to display currencies
+- [ ] Display list of available currencies from API
 - [ ] Currency search functionality
 - [ ] Exclude current selected pairs (base and target currency)
 - [ ] Choose currency pairs for conversion
