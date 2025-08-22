@@ -144,3 +144,37 @@ button {
     align-content: start;
     gap: 20px;
 }
+.title {
+    text-align: center;
+    position: relative;
+}
+.title button {
+    position: absolute;
+    top: 50%;
+    inset-inline-start: 0;
+    transform: translateY(-50%);
+    background: transparent;
+    opacity: 0.5;
+}
+.title button:hover {
+    opacity: 1;
+}
+.search input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: 1px solid var(--input-border);
+    border-radius: 10px;
+    /* Sets the color of the outline that appears when the element is focused (clicked/active) */
+    outline-color: var(--green); 
+}
+.currency-list {
+    list-style-type: none;
+}
+.currency-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding-block: 5px;
+}
