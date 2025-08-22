@@ -143,11 +143,12 @@ button {
     display: grid;
     align-content: start;
     gap: 20px;
-    transform: translateY(100%);
+    transform: translateY(100%); /* Move drawer **completely below view** initially */
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .drawer.show {
-    transform: none;
+    transform: none;    /* Move drawer back into view */
+                        /* transform: none cancels the translate */
 }
 .title {
     text-align: center;
