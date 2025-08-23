@@ -4,7 +4,7 @@ const state = {
 
 // Selectors
 const ui = {
-    controls: document.getElementbyId("controls"),
+    controls: document.getElementById("controls"),
     drawer: document.getElementById("drawer"),
     dismissBtn: document.getElementById("dismiss-btn")
 };
@@ -17,11 +17,23 @@ const setupEventListeners = () => {
 
 // Event handlers
 const showDrawer = (e) => {
-    ui.drawer.classList.add("show");
+    const drawerBtn = e.target.closest("[data-drawer]");
+    if(drawerBtn) {
+        state.openedDrawer = drawerBtn.id;
+        ui.drawer.classList.add("show");
+    }
 };
+// const showDrawer = (e) => {
+//     if(e.target.hasAttribute("data-drawer")) {
+//         state.openedDrawer = e.target.id;
+//         ui.drawer.classList.add("show");
+//     }
+// };
 
 const hideDrawer = (e) => {
+    state.openedDrawer = null;
     ui.drawer.classList.remove("show");
+    console.log(state);
 };
 
 // Render functions
@@ -31,3 +43,5 @@ const hideDrawer = (e) => {
 // API functions
 
 // Initialization
+
+setupEventListeners();
