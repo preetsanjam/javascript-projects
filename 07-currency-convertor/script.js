@@ -43,6 +43,20 @@ const hideDrawer = () => {
 };
 
 // Render functions
+const displayCurrencies = () => {
+    ui.currencyList.innerHTML = state.currencies.map(({code, name}) => {
+        return `
+         <li data-code="${code}">
+            <img src="https://placehold.co/48" alt="${name}">
+            <div>
+                <h4>${code}</h4>
+                <p>${name}</p>
+            </div>
+        </li>
+        `;
+    })
+    .join("");
+}
 
 // Helper functions
 
@@ -50,7 +64,10 @@ const hideDrawer = () => {
 const fetchCurrencies = () => {
     fetch(`https://api.freecurrencyapi.com/v1/currencies?apikey=${key}`)
         .then(response => response.json())
-        .then(console.log)
+        .then(({data}) => {
+            state.currencies = Object.values(data);
+            displayCurrencies()
+        })
         .then(console.error)
 }; 
 
