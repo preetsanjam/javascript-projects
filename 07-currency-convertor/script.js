@@ -1,3 +1,5 @@
+const key = "fca_live_EAHIMFg2WJOUUCOCWQRw4jSGqNiRvmG571DhrtYm" 
+
 const state = {
     openedDrawer: null, // Keeps track of which currency drawer (Base or Target) is currently open.
                         // Null means no drawer is open yet.
@@ -46,8 +48,11 @@ const hideDrawer = () => {
 
 // API functions
 const fetchCurrencies = () => {
-    
-} 
+    fetch(`https://api.freecurrencyapi.com/v1/currencies?apikey=${key}`)
+        .then(response => response.json())
+        .then(console.log)
+        .then(console.error)
+}; 
 
 // Initialization
 
