@@ -1,5 +1,6 @@
 const state = {
-    openedDrawer: null,
+    openedDrawer: null, // Keeps track of which currency drawer (Base or Target) is currently open.
+                        // Null means no drawer is open yet.
     currencies: []
 }
 
@@ -12,6 +13,7 @@ const ui = {
 };
 
 // Event listeners
+// This function connects user actions (events) with functions (handlers)
 const setupEventListeners = () => {
     document.addEventListener("DOMContentLoaded", initApp);
     ui.controls.addEventListener("click", showDrawer);
