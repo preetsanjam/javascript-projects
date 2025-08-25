@@ -3,7 +3,8 @@ const key = "fca_live_EAHIMFg2WJOUUCOCWQRw4jSGqNiRvmG571DhrtYm"
 const state = {
     openedDrawer: null, // Keeps track of which currency drawer (Base or Target) is currently open.
                         // Null means no drawer is open yet.
-    currencies: []
+    currencies: [],
+    filteredCurrencies: []
 }
 
 // Selectors
@@ -11,7 +12,8 @@ const ui = {
     controls: document.getElementById("controls"),
     drawer: document.getElementById("drawer"),
     dismissBtn: document.getElementById("dismiss-btn"),
-    currencyList: document.getElementById("currency-list")
+    currencyList: document.getElementById("currency-list"),
+    searchInput: document.getElementById("search")
 };
 
 // Event listeners
@@ -20,6 +22,7 @@ const setupEventListeners = () => {
     document.addEventListener("DOMContentLoaded", initApp);
     ui.controls.addEventListener("click", showDrawer);
     ui.dismissBtn.addEventListener("click", hideDrawer);
+    ui.searchInput.addEventListener("input", filteredCurrency);
 }
 
 // Event handlers
@@ -42,9 +45,21 @@ const hideDrawer = () => {
     console.log(state);
 };
 
+const filteredCurrency = () => {
+    const keyword = ui.searchInput.value.trim().toLowerCase();
+    
+    state.filteredCurrencies = state.currencies.filter(({code, name}) => {
+        return (
+            code.toLowerCase().includes(keyword) ||
+            name.toLowerCase().includes(keyword)
+        );
+    });
+    displayCurrencies();
+};
+
 // Render functions
 const displayCurrencies = () => {
-    ui.currencyList.innerHTML = state.currencies.map(({code, name}) => {
+    ui.currencyList.innerHTML = state.filteredCurrencies.map(({code, name}) => {
         return `
          <li data-code="${code}">
             <img src="${getImageURL(code)}" alt="${name}">
@@ -70,6 +85,7 @@ const fetchCurrencies = () => {
         .then(response => response.json())
         .then(({data}) => {
             state.currencies = Object.values(data);
+            state.filteredCurrencies = state.currencies;
             displayCurrencies()
         })
         .then(console.error)
