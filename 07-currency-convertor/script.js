@@ -47,7 +47,7 @@ const displayCurrencies = () => {
     ui.currencyList.innerHTML = state.currencies.map(({code, name}) => {
         return `
          <li data-code="${code}">
-            <img src="https://placehold.co/48" alt="${name}">
+            <img src="${getImageURL(code)}" alt="${name}">
             <div>
                 <h4>${code}</h4>
                 <p>${name}</p>
@@ -59,6 +59,10 @@ const displayCurrencies = () => {
 }
 
 // Helper functions
+const getImageURL = (code) => {
+    const flag = "https://wise.com/public-resources/assets/flags/rectangle/{code}.png"
+    return flag.replace("{code}", code.toLowerCase());
+} 
 
 // API functions
 const fetchCurrencies = () => {
