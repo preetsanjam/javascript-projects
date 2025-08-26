@@ -47,8 +47,7 @@ const hideDrawer = () => {
 };
 
 const filteredCurrency = () => {
-    const keyword = ui.searchInput.value.trim().toLowerCase();
-    
+    const keyword = ui.searchInput.value.trim().toLowerCase(); // toLowerCase() makes the input case-insensitive
     state.filteredCurrencies = state.currencies.filter(({code, name}) => {
         return (
             code.toLowerCase().includes(keyword) ||
@@ -79,7 +78,6 @@ const clearSearchInput = () => {
     ui.searchInput.value = "";
     ui.searchInput.dispatchEvent(new Event("input"));
 };
-
 
 const getImageURL = (code) => {
     const flag = "https://wise.com/public-resources/assets/flags/rectangle/{code}.png"
