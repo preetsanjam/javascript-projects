@@ -4,7 +4,9 @@ const state = {
     openedDrawer: null, // Keeps track of which currency drawer (Base or Target) is currently open.
                         // Null means no drawer is open yet.
     currencies: [],
-    filteredCurrencies: []
+    filteredCurrencies: [],
+    base: "USD",
+    target: "EUR" 
 }
 
 // Selectors
@@ -48,7 +50,7 @@ const hideDrawer = () => {
 
 const filteredCurrency = () => {
     const keyword = ui.searchInput.value.trim().toLowerCase(); // toLowerCase() makes the input case-insensitive
-    state.filteredCurrencies = state.currencies.filter(({code, name}) => {
+    state.filteredCurrencies = getAvailableCurrencies().filter(({code, name}) => {
         return (
             code.toLowerCase().includes(keyword) ||
             name.toLowerCase().includes(keyword)
@@ -74,6 +76,12 @@ const displayCurrencies = () => {
 }
 
 // Helper functions
+const getAvailableCurrencies = () =>{
+    return state.currencies.filter(({code}) => {
+        return state.base !== code && state.target !== code;
+    });
+}; 
+
 const clearSearchInput = () => {
     ui.searchInput.value = "";
     ui.searchInput.dispatchEvent(new Event("input"));
@@ -90,7 +98,7 @@ const fetchCurrencies = () => {
         .then(response => response.json())
         .then(({data}) => {
             state.currencies = Object.values(data);
-            state.filteredCurrencies = state.currencies;
+            state.filteredCurrencies = getAvailableCurrencies();
             displayCurrencies()
         })
         .then(console.error)
