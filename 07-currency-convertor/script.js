@@ -40,6 +40,7 @@ const showDrawer = (e) => {
 };
 
 const hideDrawer = () => {
+    clearSearchInput();
     state.openedDrawer = null;
     ui.drawer.classList.remove("show");
     console.log(state);
@@ -74,6 +75,12 @@ const displayCurrencies = () => {
 }
 
 // Helper functions
+const clearSearchInput = () => {
+    ui.searchInput.value = "";
+    ui.searchInput.dispatchEvent(new Event("input"));
+};
+
+
 const getImageURL = (code) => {
     const flag = "https://wise.com/public-resources/assets/flags/rectangle/{code}.png"
     return flag.replace("{code}", code.toLowerCase());
