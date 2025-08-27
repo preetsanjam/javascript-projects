@@ -15,7 +15,9 @@ const ui = {
     drawer: document.getElementById("drawer"),
     dismissBtn: document.getElementById("dismiss-btn"),
     currencyList: document.getElementById("currency-list"),
-    searchInput: document.getElementById("search")
+    searchInput: document.getElementById("search"),
+    baseBtn: document.getElementById("base"),
+    targetBtn: document.getElementById("target")
 };
 
 // Event listeners
@@ -25,6 +27,7 @@ const setupEventListeners = () => {
     ui.controls.addEventListener("click", showDrawer);
     ui.dismissBtn.addEventListener("click", hideDrawer);
     ui.searchInput.addEventListener("input", filteredCurrency);
+    ui.currencyList.addEventListener("click", selectPair);
 }
 
 // Event handlers
@@ -58,6 +61,12 @@ const filteredCurrency = () => {
     });
     displayCurrencies();
 };
+
+const selectPair = (e) => {
+    if (e.target.hasAttribute("data-code")) {
+        console.log(e.target.dataset.code);
+    }
+}
 
 // Render functions
 const displayCurrencies = () => {
