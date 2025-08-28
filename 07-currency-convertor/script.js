@@ -22,7 +22,8 @@ const ui = {
     targetBtn: document.getElementById("target"),
     exchangeRate: document.getElementById("exchange-rate"),
     baseInput: document.getElementById("base-input"),
-    targeInput: document.getElementById("target-input")
+    targeInput: document.getElementById("target-input"),
+    swapBtn: document.getElementById("swap-btn")
 };
 
 // Event listeners
@@ -34,6 +35,7 @@ const setupEventListeners = () => {
     ui.searchInput.addEventListener("input", filteredCurrency);
     ui.currencyList.addEventListener("click", selectPair);
     ui.baseInput.addEventListener("change", convertInput);
+    ui.swapBtn.addEventListener("click", switchPair);
 }
 
 // Event handlers
@@ -87,6 +89,14 @@ const selectPair = (e) => {
 
 const convertInput = () => {
     state.baseValue = parseFloat(ui.baseInput.value) || 1;
+    loadExchangeRate();
+};
+
+const switchPair = () => {
+    const {base, target} = state;
+    state.base = target;
+    state.target = base;
+    state.baseValue = parseFloat(ui.targeInput.value) || 1;
     loadExchangeRate();
 }
 
