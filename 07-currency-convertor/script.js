@@ -65,9 +65,23 @@ const filteredCurrency = () => {
 const selectPair = (e) => {
     console.log(e.target);
     if (e.target.hasAttribute("data-code")) {
-        console.log(e.target.dataset.code);
+        const{openedDrawer} = state;
+
+        // Update the base or target in the state
+        state[openedDrawer] = e.target.dataset.code;
+
+        // Update the buttons
+        [ui.baseBtn, ui.targetBtn].forEach((btn) => {
+            const code = state[btn.id];
+
+            btn.textContent = code;
+            btn.style.setProperty("--image", `url(${getImageURL(code)})`)
+        });
+
+        // Close the drawer after selection
+        hideDrawer();
     }
-}
+};
 
 // Render functions
 const displayCurrencies = () => {
