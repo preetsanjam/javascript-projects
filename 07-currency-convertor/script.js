@@ -7,7 +7,8 @@ const state = {
     filteredCurrencies: [],
     base: "USD",
     target: "CAD",
-    rates: {} 
+    rates: {},
+    baseValue: 1 
 }
 
 // Selectors
@@ -19,7 +20,9 @@ const ui = {
     searchInput: document.getElementById("search"),
     baseBtn: document.getElementById("base"),
     targetBtn: document.getElementById("target"),
-    exchangeRate: document.getElementById("exchange-rate")
+    exchangeRate: document.getElementById("exchange-rate"),
+    baseInput: document.getElementById("base-input"),
+    targeInput: document.getElementById("target-input")
 };
 
 // Event listeners
@@ -102,10 +105,17 @@ const displayCurrencies = () => {
     .join("");
 }
 
+const displayConversion = () => {
+    const {base, baseValue, target, rates} = state;
+    const result = baseValue * rates[base][target];
+    ui.targeInput.value = result.toFixed(4);
+    ui.baseInput.value = baseValue;
+}
+
 // Helper functions
 const updateExchangeRate = () => {
     const {base, target, rates} = state;
-    const rate  = rates[base][target].toFixed(4);
+    const rate = rates[base][target].toFixed(4);
     ui.exchangeRate.textContent = `1 ${base} = ${rate} ${target}`;
 }
 
