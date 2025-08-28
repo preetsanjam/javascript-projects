@@ -6,7 +6,8 @@ const state = {
     currencies: [],
     filteredCurrencies: [],
     base: "USD",
-    target: "EUR" 
+    target: "CAD",
+    rates: {} 
 }
 
 // Selectors
@@ -17,7 +18,8 @@ const ui = {
     currencyList: document.getElementById("currency-list"),
     searchInput: document.getElementById("search"),
     baseBtn: document.getElementById("base"),
-    targetBtn: document.getElementById("target")
+    targetBtn: document.getElementById("target"),
+    exchangeRate: document.getElementById("exchange-rate")
 };
 
 // Event listeners
@@ -32,7 +34,8 @@ const setupEventListeners = () => {
 
 // Event handlers
 const initApp = () => {
-    fetchCurrencies()
+    fetchCurrencies();
+    fetchExchangeRate();
 }
 
 const showDrawer = (e) => {
@@ -100,6 +103,12 @@ const displayCurrencies = () => {
 }
 
 // Helper functions
+const updateExchangeRate = () => {
+    const {base, target, rates} = state;
+    const rate  = rates[base][target].toFixed(4);
+    ui.exchangeRate.textContent = `1 ${base} = ${rate} ${target}`;
+}
+
 const getAvailableCurrencies = () =>{
     return state.currencies.filter(({code}) => {
         return state.base !== code && state.target !== code;
@@ -119,14 +128,25 @@ const getImageURL = (code) => {
 // API functions
 const fetchCurrencies = () => {
     fetch(`https://api.freecurrencyapi.com/v1/currencies?apikey=${key}`)
-        .then(response => response.json())
+        .then((response) => response.json())
         .then(({data}) => {
             state.currencies = Object.values(data);
             state.filteredCurrencies = getAvailableCurrencies();
             displayCurrencies()
         })
-        .then(console.error)
+        .catch(console.error);
 }; 
+
+const fetchExchangeRate = () => {
+    const {base} = state 
+    fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=${key}&base_currency=${base}`)
+        .then((response) => response.json())
+        .then(({data}) => {
+            state.rates[base] = data;
+            updateExchangeRate();
+        })
+        .catch(error);
+};
 
 // Initialization
 
