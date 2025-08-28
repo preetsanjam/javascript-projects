@@ -6,7 +6,7 @@ const state = {
     currencies: [],
     filteredCurrencies: [],
     base: "USD",
-    target: "CAD",
+    target: "EUR",
     rates: {},
     baseValue: 1 
 }
@@ -33,6 +33,7 @@ const setupEventListeners = () => {
     ui.dismissBtn.addEventListener("click", hideDrawer);
     ui.searchInput.addEventListener("input", filteredCurrency);
     ui.currencyList.addEventListener("click", selectPair);
+    ui.baseInput.addEventListener("change", convertInput);
 }
 
 // Event handlers
@@ -76,18 +77,18 @@ const selectPair = (e) => {
         // Update the base or target in the state
         state[openedDrawer] = e.target.dataset.code;
 
-        // Update the buttons
-        [ui.baseBtn, ui.targetBtn].forEach((btn) => {
-            const code = state[btn.id];
-
-            btn.textContent = code;
-            btn.style.setProperty("--image", `url(${getImageURL(code)})`)
-        });
+        // Load the exchange rates and then update the buttons
+        loadExchangeRate();
 
         // Close the drawer after selection
         hideDrawer();
     }
 };
+
+const convertInput = () => {
+    state.baseValue = parseFloat(ui.baseInput.value) || 1;
+    loadExchangeRate();
+}
 
 // Render functions
 const displayCurrencies = () => {
@@ -106,13 +107,28 @@ const displayCurrencies = () => {
 }
 
 const displayConversion = () => {
+    updateButtons();
+    updateInputs();
+    updateExchangeRate();
+}
+
+// Helper functions
+const updateButtons = () => {
+    [ui.baseBtn, ui.targetBtn].forEach((btn) => {
+            const code = state[btn.id];
+
+            btn.textContent = code;
+            btn.style.setProperty("--image", `url(${getImageURL(code)})`)
+        });
+}
+
+const updateInputs = () => {
     const {base, baseValue, target, rates} = state;
     const result = baseValue * rates[base][target];
     ui.targeInput.value = result.toFixed(4);
     ui.baseInput.value = baseValue;
 }
 
-// Helper functions
 const updateExchangeRate = () => {
     const {base, target, rates} = state;
     const rate = rates[base][target].toFixed(4);
@@ -135,6 +151,17 @@ const getImageURL = (code) => {
     return flag.replace("{code}", code.toLowerCase());
 } 
 
+const loadExchangeRate = () => {
+    const {base, rates } = state;
+    if (typeof rates[base] !== "undefined") {
+        // If the base rates are in state, then show them
+        displayConversion();
+    } else {
+        // Else, fetch the exchange rate first
+        fetchExchangeRate();
+    }
+}
+
 // API functions
 const fetchCurrencies = () => {
     fetch(`https://api.freecurrencyapi.com/v1/currencies?apikey=${key}`)
@@ -153,7 +180,7 @@ const fetchExchangeRate = () => {
         .then((response) => response.json())
         .then(({data}) => {
             state.rates[base] = data;
-            updateExchangeRate();
+            displayConversion();
         })
         .catch(error);
 };
