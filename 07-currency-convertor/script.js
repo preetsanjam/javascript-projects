@@ -122,6 +122,16 @@ const displayConversion = () => {
     updateExchangeRate();
 }
 
+const showLoading = () => {
+    ui.controls.classList.add("skeleton");
+    ui.exchangeRate.classList.add("skeleton");
+}
+
+const hideLoading = () => {
+    ui.controls.classList.remove("skeleton");
+    ui.exchangeRate.classList.remove("skeleton");
+}
+
 // Helper functions
 const updateButtons = () => {
     [ui.baseBtn, ui.targetBtn].forEach((btn) => {
