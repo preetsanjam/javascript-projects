@@ -63,6 +63,7 @@ const filteredCurrency = () => {
 };
 
 const selectPair = (e) => {
+    console.log(e.target);
     if (e.target.hasAttribute("data-code")) {
         console.log(e.target.dataset.code);
     }
