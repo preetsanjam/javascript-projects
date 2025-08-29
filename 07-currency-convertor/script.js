@@ -196,13 +196,15 @@ const fetchCurrencies = () => {
 
 const fetchExchangeRate = () => {
     const {base} = state 
+    showLoading();
     fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=${key}&base_currency=${base}`)
         .then((response) => response.json())
         .then(({data}) => {
             state.rates[base] = data;
             displayConversion();
         })
-        .catch(error);
+        .catch(console.error)
+        .finally(hideLoading);
 };
 
 // Initialization
