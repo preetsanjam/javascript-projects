@@ -13,3 +13,9 @@ A javascript app providing real-time exchange rate information to help users con
 - [ ] Calculate and display the conversion result
 - [ ] Switch conversion pairs with one-click "swap"
 - [ ] Show loading indicator on data retrieval
+
+### Requirements
+
+**Freecurrency API Key**
+
+1. Go to  
