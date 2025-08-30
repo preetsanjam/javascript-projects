@@ -208,5 +208,4 @@ const fetchExchangeRate = () => {
 };
 
 // Initialization
-
 setupEventListeners();
