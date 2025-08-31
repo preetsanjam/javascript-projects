@@ -51,3 +51,7 @@ A javascript app providing real-time exchange rate information to help users con
    ↓
 5. Updated UI displayed to user
 ```
+
+### Screenshot
+
+![Screenshot](screenshot.JPG)
