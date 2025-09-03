@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Search App</title>
+    <!-- Font awesome icon cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="main">
-        <div class="row" style="justify-content: center;">
-            <input type="text" id="search" autofocus autocomplete="off" placeholder="Search here..." />
+    <div class="wrapper">
+        <!-- Logo-->
+        <div class="logo">
+            <div class="container">
+                <p>Movie<span>Corn.</span></p>
+            </div>
+        
+        <!-- Search container -->
+        <div class="search-container">
+            <h3>Search Movie</h3>
+            <input type="text" class="form-control" id="movie-search-box" placeholder="Search movie title" >
+
+            <div class="search-list" id="search-list"></div>
         </div>
-        <div class="row" id="movie-box"></div>
+        
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
