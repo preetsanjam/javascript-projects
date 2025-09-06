@@ -56,3 +56,11 @@ img {
     flex-direction: column;
     position: relative;
 }
+.search-element h3 {
+    align-self: center;
+    margin-right: 1rem;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
