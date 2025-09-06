@@ -21,3 +21,7 @@ img {
     width: 100%;
     display: block;
 }
+.wrapper {
+    min-height: 100vh;
+    background-color: var(--dark-color);
+}
