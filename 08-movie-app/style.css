@@ -112,3 +112,15 @@ img {
     font-weight: 600;
     opacity: 0.6;
 }
+/* Thumbnail */
+.search-list::-webkit-scrollbar {
+    width: 8px;
+}
+.search-list::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.search-list::-webkit-scrollbar-thumb {
+    background-color: var(--yellow-color);
+    outline: none;
+    border-radius: 10px;
+}
