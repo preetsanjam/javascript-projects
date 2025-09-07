@@ -124,3 +124,21 @@ img {
     outline: none;
     border-radius: 10px;
 }
+/* JS-related class */
+.hide-search-list {
+    display: none;
+}
+/* Movie result */
+.result-container {
+    padding: 3rem 0;
+}
+.movie-poster img {
+    max-width: 300px;
+    margin: 0 auto;
+    border: 4px solid #fff;
+}
+.movie-info {
+    text-align: center;
+    color: #fff;
+    padding-top: 3rem;
+}
