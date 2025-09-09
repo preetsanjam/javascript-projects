@@ -194,3 +194,28 @@ img {
     color: var(--yellow-color);
     margin: 1rem 0.7rem 0 0;
 }
+/* Apply these styles only if the screen width is 450px or less */
+@media(max-width: 450px) { 
+    .logo p {
+        font-size: 1.4rem;
+    }
+    .search-element .form-control {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0.5rem 1rem;
+    }
+    .search-element h3 {
+        font-size: 1.4rem;
+    }
+    .search-list {
+        width: 90%;
+        right: 50%;
+        transform: translate(50%);
+    }
+    .search-list .search-list-item {
+        width: 100%;
+    }
+    .movie-misc-info {
+        flex-direction: column;
+    }
+} 
