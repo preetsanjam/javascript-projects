@@ -17,5 +17,21 @@ async function loadMovies(searchTerm) {
 function findMovies() {
     // trim() removes whitespace (spaces, tabs, line breaks) from the beginning and end of a string
     let searchTerm = (movieSearchBox.value).trim(); 
-    console.log(searchTerm);
+    if(searchTerm.length > 0) {
+        searchList.classList.remove("hide-search-list");
+        loadMovies(searchTerm);
+    } else {
+        searchList.classList.add("hide-search-list")
+    }
+}
+
+function displayMovieList(movies) {
+    searchList.innerHTML = "";
+    for(let idx = 0; idx < movies.length; idx++) { // let idx = 0 → This creates the counter variable idx;  sets its starting value to 0
+                                                    // idx < movies.length → The loop will run as long as this condition is true
+                                                    // idx++ → After each loop cycle, idx increases by 1
+
+        let movieListItem = document.createElement(`div`);
+        movieListItem.dataset.id = movies[idx].imdbID;
+    }
 }
