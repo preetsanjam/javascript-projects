@@ -36,11 +36,22 @@ function displayMovieList(movies) {
                                                     // Move forward one step at a time
 
         let movieListItem = document.createElement(`div`);
-        movieListItem.dataset.id = movies[idx].imdbID;
+        movieListItem.dataset.id = movies[idx].imdbID; // Setting movie id in  data-id
         movieListItem.classList.add("search-list-item");
         if(movies[idx].Poster != "N/A")
             moviePoster = movies[idx].Poster;
         else 
-            moviePoster = "image_not_found.png"
+            moviePoster = "image_not_found.png";
+        
+        movieListItem.innerHTML = `
+        <div class="search-item-thumbnail">
+             <img src="${moviePoster}">
+        </div>
+        <div class="search-item-info">
+            <h3>${movies[idx].Title}</h3>
+            <p>${movies[idx].Year}</p>
+        </div>
+        `;
+        searchList.appendChild(movieListItem); 
     }
 }
