@@ -27,7 +27,7 @@ function findMovies() {
 
 function displayMovieList(movies) {
     searchList.innerHTML = "";
-    for(let idx = 0; idx < movies.length; idx++) { // let idx = 0 → This creates the counter variable idx;  sets its starting value to 0        
+    for(let idx = 0; idx < movies.length; idx++) { // let idx = 0 → This creates the counter variable idx; sets its starting value to 0        
                                                     // idx < movies.length → The loop will run as long as this condition is true
                                                     // idx++ → After each loop cycle, idx increases by 1
                                                     // Summary:
@@ -37,5 +37,10 @@ function displayMovieList(movies) {
 
         let movieListItem = document.createElement(`div`);
         movieListItem.dataset.id = movies[idx].imdbID;
+        movieListItem.classList.add("search-list-item");
+        if(movies[idx].Poster != "N/A")
+            moviePoster = movies[idx].Poster;
+        else 
+            moviePoster = "image_not_found.png"
     }
 }
