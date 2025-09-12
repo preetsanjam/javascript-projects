@@ -54,4 +54,13 @@ function displayMovieList(movies) {
         `;
         searchList.appendChild(movieListItem); 
     }
+    loadMovieDetails();
+}
+
+function loadMovieDetails() {
+    const searchListMovies = searchList.querySelectorAll(".search-list-item");
+    searchListMovies.forEach(movie => {
+        console.log(movie);
+    })
+
 }
