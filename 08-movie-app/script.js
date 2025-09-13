@@ -66,7 +66,30 @@ function loadMovieDetails() {
             movieSearchBox.value = "";
             const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=50d32271`)
             const movieDetails = await result.json();
-            console.log(movieDetails);
+            // console.log(movieDetails);
+            displayMovieDetails(movieDetails);
         });
     });
+}
+
+function displayMovieDetails(details) {
+    resultGrid.innerHTML = `
+    <div class="movie-poster">
+        <img src="${(details.Poster != "N/A" ? details.Poster : "image_not_found.png")}" alt="movie-poster">
+    </div>
+    <div class="movie-info">
+        <h3 class="movie-title">${details.Title}</h3>
+        <ul class="movie-misc-info">
+            <li class="year">Year: ${details.Year}</li>
+            <li class="rated">Rating: PG-13</li>
+            <li class="released">Released: 05 May 2017</li>
+        </ul>
+        <p class="genre"><b>Genre:</b>Action, Adventure, Comedy</p>
+        <p class="writer"><b>Writer:</b>James Gunn, Don Abnett, Andy Lanning</p>
+        <p class="actors"><b>Actors:</b>Chris Pratt, Zoe Saldana, Dave Bautista</p>
+        <p class="plot"><b>Plot:</b>The Guardians struggle to remain together as a team while dealing with their personal family problems, notably Star-Lord's ecounter with his father, the ambitious celestial, being Ego.</p>
+        <p class="language"><b>Language:</b>English</p>
+        <p class="awards"><b><i class="fas fa-award"></i></b>Nominated for 1 Oscar</p>
+    </div>
+    `
 }
