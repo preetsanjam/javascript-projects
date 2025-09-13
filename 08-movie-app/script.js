@@ -81,15 +81,20 @@ function displayMovieDetails(details) {
         <h3 class="movie-title">${details.Title}</h3>
         <ul class="movie-misc-info">
             <li class="year">Year: ${details.Year}</li>
-            <li class="rated">Rating: PG-13</li>
-            <li class="released">Released: 05 May 2017</li>
+            <li class="rated">Rating: ${details.Rated}</li>
+            <li class="released">Released: ${details.Released}</li>
         </ul>
-        <p class="genre"><b>Genre:</b>Action, Adventure, Comedy</p>
-        <p class="writer"><b>Writer:</b>James Gunn, Don Abnett, Andy Lanning</p>
-        <p class="actors"><b>Actors:</b>Chris Pratt, Zoe Saldana, Dave Bautista</p>
-        <p class="plot"><b>Plot:</b>The Guardians struggle to remain together as a team while dealing with their personal family problems, notably Star-Lord's ecounter with his father, the ambitious celestial, being Ego.</p>
-        <p class="language"><b>Language:</b>English</p>
-        <p class="awards"><b><i class="fas fa-award"></i></b>Nominated for 1 Oscar</p>
+        <p class="genre"><b>Genre:</b> ${details.Genre}</p>
+        <p class="writer"><b>Writer:</b> ${details.Writer}</p>
+        <p class="actors"><b>Actors: </b>${details.Actors}</p>
+        <p class="plot"><b>Plot:</b> ${details.Plot}</p>
+        <p class="language"><b>Language:</b> ${details.Language}</p>
+        <p class="awards"><b><i class="fas fa-award"></i></b> ${details.Awards}</p>
     </div>
     `
 }
+
+window.addEventListener("click", (event) => {
+    if(event.target.className != "form-control")
+        searchList.classList.add("hide-search-list");
+});
