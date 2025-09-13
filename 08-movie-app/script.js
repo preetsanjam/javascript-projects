@@ -60,7 +60,9 @@ function displayMovieList(movies) {
 function loadMovieDetails() {
     const searchListMovies = searchList.querySelectorAll(".search-list-item");
     searchListMovies.forEach(movie => {
-        console.log(movie);
-    })
+        movie.addEventListener("click", async () => {
+            console.log(movie.dataset.id);
+        });
+    });
 
 }
