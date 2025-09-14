@@ -36,7 +36,7 @@ function displayMovieList(movies) {
                                                     // Move forward one step at a time
 
         let movieListItem = document.createElement(`div`);
-        movieListItem.dataset.id = movies[idx].imdbID; // Setting movie id in  data-id
+        movieListItem.dataset.id = movies[idx].imdbID; // Setting movie id in data-id
         movieListItem.classList.add("search-list-item");
         if(movies[idx].Poster !== "N/A")
             moviePoster = movies[idx].Poster; 

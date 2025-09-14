@@ -1,8 +1,8 @@
 const key = "fca_live_EAHIMFg2WJOUUCOCWQRw4jSGqNiRvmG571DhrtYm" 
 
 const state = {
-    openedDrawer: null, // Keeps track of which currency drawer (Base or Target) is currently open.
-                        // Null means no drawer is open yet.
+    openedDrawer: null, // Keeps track of which currency drawer (base or target) is currently open
+                        // Null means no drawer is open yet
     currencies: [],
     filteredCurrencies: [],
     base: "USD",
