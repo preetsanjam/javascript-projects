@@ -97,3 +97,6 @@ body {
     margin-top: 10px;
     display: none;
 }
+.clear {
+    background: crimson;
+}
