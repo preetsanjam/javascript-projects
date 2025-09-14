@@ -116,7 +116,7 @@ img {
 .search-list::-webkit-scrollbar {
     width: 8px;
 }
-.search-list::-webkit-scrollbar-track {
+.search-list::-webkit-scrollbar-track { /* Pseudo-element that applies styles specifically to the track of the scrollbar */
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 .search-list::-webkit-scrollbar-thumb {
