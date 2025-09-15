@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <div class="card" id="card">
+    <div class="card">
         <div class="search">
             <!-- spellcheck="false" disables the browser’s built-in spell checker -->
             <!-- Red underlines won’t appear for misspelled city names -->
@@ -52,7 +52,7 @@
         const searchBox = document.querySelector(".search input");
         const searchBtn = document.querySelector(".search button");
         const weatherIcon = document.querySelector(".weather-icon");
-        const card = document.getElementById("card");
+        const card = document.querySelector(".card");
                 
         async function checkWeather(city) {
             const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
@@ -72,6 +72,7 @@
 
                 if(data.weather[0].main == "Clouds") {
                     weatherIcon.src="images/clouds.png";
+                    card.classList.add("clouds");
                 } 
                 else if(data.weather[0].main == "Clear") {
                     weatherIcon.src="images/clear.png";
@@ -79,12 +80,15 @@
                 }
                 else if(data.weather[0].main == "Rain") {
                     weatherIcon.src="images/rain.png";
+                    card.classList.add("rain");
                 } 
                 else if(data.weather[0].main == "Drizzle") {
                     weatherIcon.src="images/drizzle.png";
+                    card.classList.add("drizzle");
                 }
                 else if(data.weather[0].main == "Mist") {
                     weatherIcon.src="images/mist.png";
+                    card.classList.add("mist");
                 }
 
                 // Display weather info when search button is clicked
