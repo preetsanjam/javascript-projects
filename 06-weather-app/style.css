@@ -98,17 +98,17 @@ body {
     display: none;
 }
 .clouds {
-    background: crimson;
+    background: linear-gradient(135deg, #b0b0b0, #6a85b6);
 }
 .clear {
-    background: yellowgreen;
+    background: linear-gradient(135deg, #4facfe, #fbc531);
 }
 .rain {
-    background: gray;
+    background: linear-gradient(135deg, #2c3e50, #bdc3c7);
 }
 .drizzle {
-    background: #00feba;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
 }
 .mist {
-    background: goldenrod;
+    background: linear-gradient(135deg, #b8b8b8, #ffffff);
 }
