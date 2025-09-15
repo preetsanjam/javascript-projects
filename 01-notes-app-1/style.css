@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 /* Apply these styles to ALL elements on the page */
 *{
     margin: 0%; /* Remove all default outer spacing (margins) from elements */
     padding: 0%; /* Remove all default inner spacing (padding) from elements */
     box-sizing: border-box; /* Include padding and border inside the element's 
                                 total width/height for easier layout control */
+    font-family: 'Outfit', sans-serif;
 }
 body {
-    font-family: 'Roboto', sans-serif;
+    
     background-color: orange;
 }
 #addNote {
