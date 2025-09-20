@@ -23,7 +23,10 @@
         <div class="search-container">
             <div class="search-element">
                 <h3>Search Movie</h3>
-                <input type="text" class="form-control" id="movie-search-box" placeholder="Search movie title" onkeyup="findMovies()" onclick="findMovies()">
+
+                <!-- onkeyup -> Runs findMovies() every time a key is released --> 
+                <!-- onclick -> Runs findMovies() when the input box is clicked -->
+                <input type="text" class="form-control" id="movie-search-box" placeholder="Search movie title"  onkeyup="findMovies()" onclick="findMovies()">
 
                 <div class="search-list" id="search-list">
                     <!-- List here -->
