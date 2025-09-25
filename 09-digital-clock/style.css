@@ -29,6 +29,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    backdrop-filter: blur(40px);
 }
 .container::before {
     content: ''; /* Required for ::before to render anything; it’s empty, meaning no text, just a shape */
@@ -51,4 +52,11 @@
     right: -30px;
     bottom: -50px;
     z-index: -1; 
+}
+.clock span {
+    font-size: 80px;
+    width: 110px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
 }
