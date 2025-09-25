@@ -31,7 +31,7 @@
     justify-content: center;
 }
 .container::before {
-    content: '';
+    content: ''; /* Required for ::before to render anything; it’s empty, meaning no text, just a shape */
     width: 180px;
     height: 180px;
     background: #f41b75;
