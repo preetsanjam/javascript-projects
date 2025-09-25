@@ -30,3 +30,14 @@
     align-items: center;
     justify-content: center;
 }
+.container::before {
+    content: '';
+    width: 180px;
+    height: 180px;
+    background: #f41b75;
+    border-radius: 5px;
+    position: absolute;
+    left: -50px;
+    top: -50px;
+    z-index: -1; /* Places the pseudo-element behind the container’s content */
+}
