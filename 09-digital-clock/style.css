@@ -41,3 +41,14 @@
     top: -50px;
     z-index: -1; /* Places the pseudo-element behind the container’s content */
 }
+.container::after {
+    content: ''; 
+    width: 180px;
+    height: 180px;
+    background: #419aff;
+    border-radius: 50%; /* For circle */
+    position: absolute;
+    right: -30px;
+    bottom: -50px;
+    z-index: -1; 
+}
