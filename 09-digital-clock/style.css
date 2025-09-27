@@ -71,8 +71,8 @@
     content: 'HOURS';
 }
 #min::after {
-    content: 'MINUTES';
+    content: 'MINS';
 }
 #sec::after {
-    content: 'SECONDS';
+    content: 'SEC';
 }
