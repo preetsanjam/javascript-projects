@@ -31,3 +31,9 @@
 #selectField img {
     width: 12px; 
 }
+#list {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+    overflow: hidden;
+}
