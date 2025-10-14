@@ -29,7 +29,8 @@
     cursor: pointer;
 }
 #selectField img {
-    width: 12px; 
+    width: 12px;
+    transition: transform 0.5s; 
 }
 #list {
     width: 100%;
